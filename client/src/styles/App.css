@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+html {
+    background: url(../images/background-color.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100%;
+    z-index: 0;
+}
+
+#body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: auto;
+    height: 100vh;
+}
+
+
+
+#header {
+    width: 100%;
+    height: 75px;
+}
+
+#contact-link {
+    color: rgb(75, 75, 75);
+    font-family: oswald;
+    float: right;
+    margin-right: 25px;
+    margin-top: 5px;
+    transition: .25s all ease-in;
+}
+
+#contact-link:hover {
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+
+/* ---------- Landing page navigation ---------- */
+#main-nav {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    margin-right: 5vw;
+    width: 60vw;
+    min-width: 600px;
+}
+
+#image-buttons {
+    position: relative;
+    display: flex;
+    width: 50vw;
+    height: 30vw;
+    min-height: 300px;
+    min-width: 500px;
+}
+
+@keyframes center-left {
+    from {
+        width: 30vw;
+        min-width: 300px;
+        height: 100%;
+        left: 30%;
+        bottom: 0;
+        opacity: 1;
+        z-index: 10;
+    }
+    to {
+        width: 20vw;
+        min-width: 200px;
+        height: 66.67%;
+        left: 0;
+        bottom: 16.67%;
+        opacity: .5;
+        z-index: 0;
+    }
+}
+
+@keyframes right-center {
+    from {
+        width: 20vw;
+        min-width: 200px;
+        height: 66.67%;
+        left: 60%;
+        bottom: 16.67%;
+        opacity: .5;
+        z-index: 0;
+    }
+    to {
+        width: 30vw;
+        min-width: 300px;
+        height: 100%;
+        left: 30%;
+        bottom: 0;
+        opacity: 1;
+        z-index: 10;
+    }
+}
+
+.animate-center-left {
+    animation-name: center-left;
+    animation-duration: .5s;
+}
+
+.animate-right-center {
+    animation-name: right-center;
+    animation-duration: .5s;
+}
+
+#left-link {
+    position: absolute;
+    width: 20vw;
+    min-width: 200px;
+    height: 66.67%;
+    left: 0;
+    bottom: 16.67%;
+    opacity: .5;
+    transition: .25s filter ease-in;
+}
+
+#left-link:hover {
+    filter: invert(75%);
+}
+
+#center-link {
+    position: absolute;
+    width: 30vw;
+    min-width: 300px;
+    height: 100%;
+    left: 30%;
+    bottom: 0;
+    z-index: 10;
+    transition: .25s filter ease-in;
+}
+
+#center-link:hover {
+    cursor: pointer;
+    filter: invert(100%);
+}
+
+#right-link {
+    position: absolute;
+    width: 20vw;
+    min-width: 200px;
+    height: 66.67%;
+    right: 0;
+    bottom: 16.67%;
+    opacity: .5;
+    transition: .25s filter ease-in;
+}
+
+#right-link:hover {
+    filter: invert(75%);
+}
+
+.img-button {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-button {
+    position: absolute;
+    left: 0;
+    height: 66.67%;
+    width: 10%;
+    bottom: 16.67%;
+    min-width: 60px;
+    min-height: 200px;
+    transition: .25s filter ease-in;
+}
+
+.nav-button:hover {
+    filter: invert(100%);
+    cursor: pointer;
+}
