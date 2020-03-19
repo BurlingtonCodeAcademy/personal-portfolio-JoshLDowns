@@ -4,13 +4,17 @@ import code from '../images/code-link-gray.png'
 import art from '../images/art-link-gray.png'
 import blog from '../images/blog-link-gray.png'
 import arrow from '../images/arrow.png'
+import { Link } from 'react-router-dom'
 
 class HomeNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             count: 0,
-            imgAr: [<img src={about} className='img-button' alt='About Link'/>, <img src={code} className='img-button' alt='Code Link' />, <img src={art} className='img-button' alt='Art Link' />, <img src={blog} className='img-button' alt='Blog Link' />],
+            imgAr: [<Link to={'/about'}><img src={about} id='about-link-img' className='img-button' onClick={this.props.handleNavLink} alt='About Link'/></Link>,
+                <Link to={'/code'}><img src={code} id='code-link-img' className='img-button' alt='Code Link' onClick={this.props.handleNavLink}/></Link>,
+                <Link to={'/art'}><img src={art} id='art-link-img' className='img-button' onClick={this.props.handleNavLink} alt='Art Link' /></Link>,
+                <Link to={'blog'}><img src={blog} id='blog-link-img' className='img-button' alt='Blog Link' onClick={this.props.handleNavLink}/></Link>],
             centerLeftClass: '',
             rightCenterClass: ''
         }
