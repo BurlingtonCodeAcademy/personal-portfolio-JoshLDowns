@@ -16,9 +16,11 @@ class HomeNav extends React.Component {
                 <Link to={'/art'}><img src={art} id='art-link-img' className='img-button' onClick={this.props.handleNavLink} alt='Art Link' /></Link>,
                 <Link to={'blog'}><img src={blog} id='blog-link-img' className='img-button' alt='Blog Link' onClick={this.props.handleNavLink}/></Link>],
             centerLeftClass: '',
-            rightCenterClass: ''
+            rightCenterClass: '',
+            animationClass: 'animate-nav-load'
         }
     }
+
 
     handleSwitch = () => {
         this.setState(prevState =>({
@@ -35,10 +37,14 @@ class HomeNav extends React.Component {
         }), 500)
     }
 
+    componentWillUnmount() {
+        
+    }
+
     render() {
 
         return (
-            <div id='nav-container'>
+            <div id='nav-container' className={this.state.animationClass}>
                 <div id='main-nav'>
                     <img src={arrow} className='nav-button' onClick={this.handleSwitch} onMouseUp={this.handleUp} alt='Arrow Navigation' />
                     <div id='image-buttons'>

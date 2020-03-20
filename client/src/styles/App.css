@@ -17,6 +17,7 @@ html {
     align-items: flex-end;
     width: auto;
     height: 100vh;
+    overflow: hidden;
 }
 
 Link {
@@ -90,6 +91,7 @@ Link {
     height: 30vw;
     min-height: 300px;
     min-width: 500px;
+    overflow: hidden;
 }
 /*animation keyframes for carousel navigation*/
 @keyframes center-left {
@@ -132,6 +134,24 @@ Link {
         opacity: 1;
         z-index: 10;
     }
+}
+
+@keyframes nav-start {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        top: 33.33%;
+        opacity: 1;
+    }
+}
+
+.animate-nav-load {
+    animation: nav-start 2.5s;
 }
 
 .animate-center-left {
