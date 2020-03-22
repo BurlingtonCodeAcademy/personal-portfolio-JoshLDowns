@@ -5,45 +5,78 @@ import About from './About.js'
 import Code from './Code.js'
 import Art from './Art.js'
 import Blog from './Blog.js'
-import { Switch, Route } from 'react-router-dom';
+import Contact from './Contact.js'
+import { Route } from 'react-router-dom';
 import '../styles/App.css';
 
 class App extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      isHome: true,
-      currentPage: 'home-link'
+      currentPage: '/'
     }
   }
 
-  handleHeaderLink = (event) => {
+  handleLink = () => {
     this.setState({
-      isHome: event.target.id==='home-link',
-      currentPage: event.target.id
+      currentPage: window.location.pathname
+    })
+  }
+
+  browserButtonHandler = (event) => {
+    this.setState({
+      currentPage: event.target.location.path
+
     })
   }
 
   handleNavLink = (event) => {
-    let linkText = event.target.id.slice(0, event.target.id.length-4)
     this.setState({
-      isHome: linkText==='home-link',
-      currentPage: linkText
+      currentPage: event.target.id
     })
   }
 
-  render() {
+  componentDidMount() {
+    window.onpopstate=this.browserButtonHandler
+    this.setState({
+      currentPage: window.location.pathname
+    })
+  }
 
+  componentDidUpdate() {
+    if (this.state.currentPage !== window.location.pathname) {
+      this.setState({
+        currentPage: window.location.pathname
+      })
+    }
+  }
+
+
+  render() {
+  
     return (
       <div id='body'>
-        <Header currentPage={this.state.currentPage} handleHeaderLink={this.handleHeaderLink} currentPagt={this.state.currentPage}/>
-        {this.state.isHome&&<HomeNav handleNavLink={this.handleNavLink}/>}
-        <Switch>
-          <Route path={'/about'} component={About} />
-          <Route path={'/code'} component={Code} />
-          <Route path={'/art'} component={Art} />
-          <Route path={'/blog'} component={Blog} />
-        </Switch>
+        <Header currentPage={this.state.currentPage} handleLink={this.handleLink}/>
+        <div>
+          <Route exact path='/' >
+            <HomeNav handleNavLink={this.handleNavLink} leaveHome={this.state.leaveHome}/>
+          </Route>
+          <Route path='/about'>
+            <About />
+          </Route>
+          <Route path='/code'>
+            <Code animationClass='animate-div-load'/>
+          </Route>
+          <Route path='/art'>
+            <Art animationClass='animate-div-load'/>
+          </Route>
+          <Route path='/blog'>
+            <Blog />
+          </Route>
+          <Route path='/contact'>
+            <Contact />
+          </Route>
+        </div>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
+/* -------- General Formatting -------- */
 html {
     background: url(../images/background-color.png) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -13,10 +14,9 @@ html {
 #body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-end;
     width: auto;
-    height: 100vh;
+    height: auto;
     overflow: hidden;
 }
 
@@ -24,6 +24,16 @@ Link {
     text-decoration: none;
 }
 
+a {
+    text-decoration: none;
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+}
+
+/* -------- Static Header Formatting -------- */
 #header {
     width: 100%;
     height: 60px;
@@ -67,32 +77,36 @@ Link {
     cursor: pointer;
 }
 
+/* -------- Landing page Title -------- */
 
-/* ---------- Landing page navigation ---------- */
-#nav-container {
-    position: absolute;
-    right: 0;
-    top: 33.33%;
-}
-
-#main-nav {
+#home {
+    height: 90vh;
     display: flex;
-    position: relative;
-    justify-content: flex-end;
-    margin-right: 5vw;
-    width: 60vw;
-    min-width: 600px;
+    flex-direction: column-reverse;
+    justify-content: center;
 }
 
-#image-buttons {
-    position: relative;
+#title {
     display: flex;
-    width: 50vw;
-    height: 30vw;
-    min-height: 300px;
-    min-width: 500px;
-    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: oswald;
+    font-size: 2.5rem;
 }
+
+.title-text {
+    padding: 0;
+    margin: 0 5vw 0 0;
+    transition: color .5s ease, text-shadow .5s ease;
+}
+
+.title-text:hover {
+    cursor: crosshair;
+    color: rgb(200, 200, 200);
+    text-shadow: 2px 2px black;
+}
+
+/* -------- Animation formatting -------- */
 /*animation keyframes for carousel navigation*/
 @keyframes center-left {
     from {
@@ -136,22 +150,23 @@ Link {
     }
 }
 
-@keyframes nav-start {
+/*animation keyframes for div fade in*/
+@keyframes div-start {
     0% {
-        top: 0;
         opacity: 0;
     }
-    75% {
-        opacity: 1;
-    }
     100% {
-        top: 33.33%;
         opacity: 1;
     }
 }
 
-.animate-nav-load {
-    animation: nav-start 2.5s;
+/* -------- animation classes -------- */
+.animate-div-load {
+    animation: div-start 2.5s;
+}
+
+.modal-load {
+    animation: div-start .75s;
 }
 
 .animate-center-left {
@@ -163,6 +178,27 @@ Link {
     animation-name: right-center;
     animation-duration: .5s;
 }
+
+/* ---------- Landing page navigation ---------- */
+#main-nav {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    margin-right: 5vw;
+    width: 60vw;
+    min-width: 600px;
+}
+
+#image-buttons {
+    position: relative;
+    display: flex;
+    width: 50vw;
+    height: 30vw;
+    min-height: 300px;
+    min-width: 500px;
+    overflow: hidden;
+}
+
 
 #left-link {
     position: absolute;
@@ -229,4 +265,226 @@ Link {
 .nav-button:hover {
     filter: invert(100%);
     cursor: pointer;
+}
+
+/* -------- main div formatting -------- */
+#main-div {
+    position: relative;
+    margin-top: 40px;
+    margin-right: 2.5vw;
+    width: Calc(60vw + 20px);
+    min-width: 620px;
+    height: 85vh;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+#div-fade {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-width: 600px;
+    height: 50px;
+    background: linear-gradient(rgb(255, 191, 179, 0), rgb(255, 191, 179)65%);
+    pointer-events: none;
+}
+
+#div-scroll {
+    width: Calc(60vw + 20px);
+    min-width: 620px;
+    overflow: auto;
+    height: 84vh;
+}
+
+/*inner scrollbar formatting*/
+#div-scroll::-webkit-scrollbar {
+    width: 11px;
+  }
+  #div-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(75,75,75) rgb(200, 200, 200);
+  }
+  #div-scroll::-webkit-scrollbar-track {
+    background:rgb(200, 200, 200);
+  }
+  #div-scroll::-webkit-scrollbar-thumb {
+    background-color:rgb(75,75,75) ;
+    border-radius: 6px;
+    border: 3px solid rgb(200, 200, 200);
+  }
+
+/* ---------- Code Portfolio ----------- */
+.project {
+    display: flex;
+    justify-content: space-between;
+    height: 25vw;
+    min-height: 250px;
+    margin-bottom: 10px;
+}
+
+.code-image-wrapper {
+    width: 25vw;
+    min-width: 250px;
+    height: 100%;
+}
+
+.right-cd {
+    margin-right: 20px;
+}
+
+.code-image {
+    width: Calc(100% - 10px);
+    height: Calc(100% - 10px);
+    border: 5px solid rgb(75, 75, 75);
+}
+
+.code-text-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    width: 35vw;
+    min-width: 350px;
+    height: Calc(25vw - 5px - 1vw);
+    min-height: 245px;
+    padding-top: 1vw;
+    border-bottom: 5px solid rgb(255, 191, 179);
+    background-color: rgb(0,0,0,.15);
+    font-family: oswald;
+}
+
+.left-wrapper {
+    margin: 0;
+}
+
+.code-text-fade {
+    position: absolute;
+    bottom: 0;
+    height: 5vh;
+    background: linear-gradient(rgb(255, 191, 179, 0), rgb(255, 191, 179));
+    width: 100%;
+    pointer-events: none;
+}
+
+.code-text-scroll {
+    width: Calc(35vw + 18px);
+    min-width: 368px;
+    overflow: auto;
+    height: Calc(25vw - 5px);
+    min-height: 245px;
+}
+
+.inner-code-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: Calc(35vw - 20px);
+    min-width: 330px;
+    padding: 10px;
+}
+
+.code-title {
+    margin: 0;
+    padding-left: 5px;
+    color: rgb(75, 75, 75);
+    text-decoration: underline;
+}
+
+.code-text {
+    padding-left: 5px;
+}
+
+/* ---------- Art Portfolio ----------- */
+.art-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    min-width: 600px;
+}
+
+.art-title {
+    font-family: oswald;
+    font-size: 1.5rem;
+    color: rgb(75, 75, 75);
+    transition: color .5s ease, text-shadow .5s ease;
+}
+
+.art-title:hover {
+    cursor: crosshair;
+    color: rgb(200, 200, 200);
+    text-shadow: 1px 1px rgb(75, 75, 75);
+}
+
+.art-thumbnails {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.art-thumb {
+    width: 30%;
+    height: 30%;
+    margin: .75%;
+    border: 5px solid rgb(75, 75, 75);
+    filter: grayscale(75%);
+    transition: border .5s ease, filter .5s ease;
+}
+
+.art-thumb:hover {
+    cursor: pointer;
+    filter: grayscale(0%);
+    border: 5px solid rgb(200, 200, 200);
+}
+
+#art-modal {
+    position: fixed;
+    z-index: 10;
+    top: 7.5vh;
+    left: 5vw;
+    width: 90vw;
+    height: 85vh;
+    border: 5px solid rgb(75, 75, 75);
+    background-color: rgb(0,0,0,.75)
+
+}
+
+#modal-title-bar {
+    display: flex;
+    height: 40px;
+    margin: 0 10px 0 10px;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+    font-family: oswald;
+    font-size: 2rem;
+    color: rgb(200, 200, 200);
+}
+
+#modal-image-wrapper {
+    text-align: center;
+    padding: 10px;
+    height: 90%;
+}
+
+#image-close {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-top: 5px;
+    background-color: rgb(200, 200, 200);
+    color: rgb(75, 75, 75);
+    border: 2px solid rgb(75, 75, 75);
+    transition: filter .5s ease;
+}
+
+#image-close:hover {
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+.modal-image {
+    height: 100%;
+    width: auto;
 }
