@@ -26,7 +26,6 @@ class App extends React.Component {
   browserButtonHandler = (event) => {
     this.setState({
       currentPage: event.target.location.path
-
     })
   }
 
@@ -71,7 +70,7 @@ class App extends React.Component {
             <Art animationClass='animate-div-load'/>
           </Route>
           <Route path='/blog'>
-            <Blog />
+            <Blog animationClass='animate-div-load'/>
           </Route>
           <Route path='/contact'>
             <Contact />

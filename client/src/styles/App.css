@@ -162,7 +162,7 @@ h3 {
 
 /* -------- animation classes -------- */
 .animate-div-load {
-    animation: div-start 2.5s;
+    animation: div-start 1s;
 }
 
 .modal-load {
@@ -198,7 +198,6 @@ h3 {
     min-width: 500px;
     overflow: hidden;
 }
-
 
 #left-link {
     position: absolute;
@@ -439,6 +438,7 @@ h3 {
     border: 5px solid rgb(200, 200, 200);
 }
 
+/*modal window formatting*/
 #art-modal {
     position: fixed;
     z-index: 10;
@@ -487,4 +487,69 @@ h3 {
 .modal-image {
     height: 100%;
     width: auto;
+}
+
+/* -------- Blog Formatting -------- */
+
+#blog-scroll {
+    width: Calc(60vw + 20px);
+    min-width: 620px;
+    overflow: auto;
+    height: Calc(84vh - 60px);
+}
+
+#blog-scroll::-webkit-scrollbar {
+    width: 11px;
+  }
+  #blog-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(75,75,75) rgb(200, 200, 200);
+  }
+  #blog-scroll::-webkit-scrollbar-track {
+    background:rgb(200, 200, 200);
+  }
+  #blog-scroll::-webkit-scrollbar-thumb {
+    background-color:rgb(75,75,75) ;
+    border-radius: 6px;
+    border: 3px solid rgb(200, 200, 200);
+  }
+
+#blog-header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(0,0,0,.25);
+}
+
+.blog-post {
+    padding: 10px;
+    font-family: oswald;
+}
+
+#archive-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: Calc(100% - 20px);
+    height: auto;
+    background-color: rgb(0,0,0,.15);
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: .75rem;
+}
+
+.blog-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: Calc(100% - 30px);
+    height: auto;
+}
+
+.blog-img {
+    width: 80%;
+    height: auto;
+    border: 5px solid rgb(75,75,75);
+    border-radius: 25px;
 }
