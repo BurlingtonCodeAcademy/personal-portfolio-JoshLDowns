@@ -42,7 +42,7 @@ class Contact extends React.Component {
             alert("Please fill out all of the fields!");
         } else {
 
-            fetch(`${window.location.origin}/send`, {
+            fetch(`http://localhost:3000/send`, {
                 method: "POST",
                 body: JSON.stringify(this.state),
                 headers: {
