@@ -1,3 +1,4 @@
+// -------- Header Component that triggers most routing -------- //
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -8,7 +9,7 @@ class Header extends React.Component {
             currentPage: '/'
         }
     }
-
+    //renders each link in the header and switches classes dependant of which page you are for functionality
     render() {
         return (
             <div id='header'>

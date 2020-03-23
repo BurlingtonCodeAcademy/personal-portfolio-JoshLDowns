@@ -498,6 +498,7 @@ h3 {
     height: Calc(84vh - 60px);
 }
 
+/*scroll formatting to fit this component*/
 #blog-scroll::-webkit-scrollbar {
     width: 11px;
   }
@@ -552,4 +553,104 @@ h3 {
     height: auto;
     border: 5px solid rgb(75,75,75);
     border-radius: 25px;
+}
+
+/* ------- About Me Formatting ------- */
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: oswald;
+    padding: 5vw;
+    background-color: rgb(0,0,0,.15);
+}
+
+/* -------- Contact page formatting -------- */
+
+#contact {
+    font-family: oswald;
+    color: rgb(75, 75, 75);
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-size: 1.15rem;
+}
+
+#message-inputs {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-name {
+    display: block;
+    width: 50vw;
+    min-width: 500px;
+    margin: 10px;
+    font-family: oswald;
+    font-size: 1.15rem;
+}
+
+#form-email {
+    display: block;
+    width: 50vw;
+    min-width: 500px;
+    margin: 10px;
+    font-family: oswald;
+    font-size: 1.15rem;
+}
+
+#form-message {
+    font-family: oswald;
+    display: block;
+    width: 50vw;
+    min-width: 500px;
+    height: 200px;
+    margin-top: 10px;
+    resize: none;
+}
+
+#form-submit {
+    font-family: oswald;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-top: 5px;
+    background-color: rgb(200, 200, 200);
+    color: rgb(75, 75, 75);
+    border: 2px solid rgb(75, 75, 75);
+    transition: filter .5s ease; 
+}
+
+#form-submit:hover {
+    cursor: pointer;
+    filter: invert(100%)
+}
+
+#contact-images {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.contact-image-wrapper {
+    width: 100px;
+    height: 100px;
+    border: 5px solid rgb(75, 75, 75);
+}
+
+.contact-image {
+    width: 100%;
+    height: 100%;
+    transition: filter 1s ease;
+}
+
+.contact-image:hover {
+    cursor: pointer;
+    filter: invert(100%)
 }

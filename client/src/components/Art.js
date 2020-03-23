@@ -1,3 +1,5 @@
+// -------- Component that holds Art Portfolio -------- //
+
 import React from 'react'
 
 class Art extends React.Component {
@@ -7,13 +9,15 @@ class Art extends React.Component {
             currentModal: false
         }
     }
-
+    
+    //handles when thumbnails get selected to view modal
     handleModal = (event) => {
         this.setState({
             currentModal: event.target.id
         })
     }
 
+    //closes modal windows
     handleClose = () => {
         console.log('click')
         this.setState({
@@ -21,9 +25,11 @@ class Art extends React.Component {
         })
     }
 
+    //renders all thumbnails
     render() {
         return (
             <div>
+                {/*conditionally renders modal window based on state*/}
                 {this.state.currentModal && <ArtModal currentModal={this.state.currentModal} handleClose={this.handleClose}/>}
             <div id='main-div'>
                 <div id='div-scroll' className={this.props.animationClass}>
@@ -60,6 +66,7 @@ class Art extends React.Component {
     }
 }
 
+//functional modal component
 function ArtModal(props) {
     let title = props.currentModal.split('-').join(' ').toUpperCase();
     return (

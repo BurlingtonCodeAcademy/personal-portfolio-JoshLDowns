@@ -1,3 +1,5 @@
+// ------- Main routing page that holds static headbar component ------- //
+
 import React from 'react';
 import Header from './Header.js'
 import HomeNav from './HomeNav.js'
@@ -17,24 +19,28 @@ class App extends React.Component {
     }
   }
 
+  //event handler for clicking on links in headbar
   handleLink = () => {
     this.setState({
       currentPage: window.location.pathname
     })
   }
 
+  //event handler for back and forward buttons
   browserButtonHandler = (event) => {
     this.setState({
       currentPage: event.target.location.path
     })
   }
 
+  //event handler for navigation carousel events
   handleNavLink = (event) => {
     this.setState({
       currentPage: event.target.id
     })
   }
 
+  //sets event listener for back and forward buttons on mount, and makes sure current page is correct in state in case of refresh
   componentDidMount() {
     window.onpopstate=this.browserButtonHandler
     this.setState({
@@ -42,6 +48,7 @@ class App extends React.Component {
     })
   }
 
+  //makes sure the currentPage is correct in state on componenet update
   componentDidUpdate() {
     if (this.state.currentPage !== window.location.pathname) {
       this.setState({
@@ -50,7 +57,7 @@ class App extends React.Component {
     }
   }
 
-
+  //renders all components through routing
   render() {
   
     return (
@@ -61,7 +68,7 @@ class App extends React.Component {
             <HomeNav handleNavLink={this.handleNavLink} leaveHome={this.state.leaveHome}/>
           </Route>
           <Route path='/about'>
-            <About />
+            <About animationClass='animate-div-load'/>
           </Route>
           <Route path='/code'>
             <Code animationClass='animate-div-load'/>
@@ -73,7 +80,7 @@ class App extends React.Component {
             <Blog animationClass='animate-div-load'/>
           </Route>
           <Route path='/contact'>
-            <Contact />
+            <Contact animationClass='animate-div-load'/>
           </Route>
         </div>
       </div>

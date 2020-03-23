@@ -1,10 +1,11 @@
+// -------- Code portfolio component -------- /
 import React from 'react'
 
 function Code(props) {
     return (
         <div id='main-div'>
             <div id='div-scroll' className={props.animationClass}>
-
+                {/*Text Adventure Content*/}
                 <div className='project'>
                     <div className='code-image-wrapper'>
                         <img className='code-image' src='/images/text-adventure-2.png' alt='Robot Apocalypse Screenshot'/>
@@ -51,7 +52,7 @@ function Code(props) {
                         <img className='code-image' src='/images/text-adventure-1.png' alt='Robot Apocalypse Screenshot'/>
                     </div>
                 </div>
-
+                {/*Geo-Vermonter Content*/}
                 <div className='project'>
                     <div className='code-image-wrapper'>
                         <img className='code-image' src='/images/geo-vermonter-1.png' alt='Geo-Vermonter Screenshot'/>
@@ -97,6 +98,7 @@ function Code(props) {
                     </div>
                 </div>
 
+                {/*Tic Tac Toe Content*/}
                 <div className='project'>
                     <div className='code-image-wrapper'>
                         <img className='code-image' src='/images/tic-tac-toe.png' alt='Tic Tac Toe Screenshot'/>
@@ -143,6 +145,7 @@ function Code(props) {
                     </div>
                 </div>
 
+                {/*Yelpington Content*/}
                 <div className='project'>
                     <div className='code-image-wrapper'>
                         <img className='code-image' src='/images/yelpington.png' alt='Yelpington Screenshot'/>
@@ -168,6 +171,7 @@ function Code(props) {
                     </div>
                 </div>
 
+                {/*Original Portfolio Content*/}
                 <div className='project'>
                     <div className='left-wrapper code-text-wrapper'>
                         <div className='code-text-scroll'>

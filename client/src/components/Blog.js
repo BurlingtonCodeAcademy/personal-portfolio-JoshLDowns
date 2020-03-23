@@ -1,3 +1,6 @@
+// -------- Blog Component --------//
+
+//imports of various archived blogposts
 import React from 'react'
 import FirstEntry from './blog-posts/FirstEntry.js'
 import February15 from './blog-posts/February15.js'
@@ -15,6 +18,7 @@ class Blog extends React.Component {
         }
     }
 
+    //handles when archives are selected in the blog to display archive links
     handleArchive = (event) => {
         this.setState({
             current: event.target.id === 'current' ? true : false,
@@ -22,12 +26,14 @@ class Blog extends React.Component {
         })
     }
 
+    //handles when archive links are selected
     handleArchiveLink = (event) => {
         this.setState({
             archive: event.target.id
         })
     }
-
+    
+    //conditionally renders various parts of the blog page based on selections
     render() {
         return (
             <div id='main-div' className={this.props.animationClass}>
@@ -43,6 +49,7 @@ class Blog extends React.Component {
     }
 }
 
+//Blog header component that holds links to current posts and archives
 function BlogHeader(props) {
     return (
         <div id='blog-header'>
@@ -52,16 +59,19 @@ function BlogHeader(props) {
     )
 }
 
+//Component that renders all links in archive based on state
 function ArchiveLinks(props) {
     return (
         <div id='archive-links'className={props.className}>
             {props.archiveNames.map((name, i)=>{
+                {/*nested ternary to handle highlighting of archive links*/}
                 return <h1 id={`archive-${i}`} key={i} onClick={props.handleArchiveLink} className={!props.archive? 'text-link' : props.archiveNames[parseInt(props.archive.split('-')[1])]===name ? 'selected-link':'text-link'}>{name}</h1>
             })}
         </div>
     )
 }
 
+//functional component for current blog posts
 function CurrentBlog(props) {
     return (
         <div className={props.className}>

@@ -1,3 +1,5 @@
+//-------- 'Home Page (desktop)' --------//
+
 import React from 'react'
 import about from '../images/about-link-gray.png'
 import code from '../images/code-link-gray.png'
@@ -22,6 +24,7 @@ class HomeNav extends React.Component {
         }
     }
 
+    //handles carousel events by setting animation classes to state
     handleSwitch = () => {
         this.setState(prevState => ({
             count: (prevState.count === 3 ? 0 : prevState.count + 1),
@@ -30,6 +33,7 @@ class HomeNav extends React.Component {
         }))
     }
 
+    //removes animation classes from carousel on mouseup
     handleUp = () => {
         setTimeout(this.setState({
             centerLeftClass: '',
@@ -49,6 +53,7 @@ class HomeNav extends React.Component {
                 <div id='nav-container' className={this.state.animationClass}>
                     <div id='main-nav'>
                         <img src={arrow} className='nav-button' onClick={this.handleSwitch} onMouseUp={this.handleUp} alt='Arrow Navigation' />
+                        {/*conditionally renders the image buttons based on array in state*/}
                         <div id='image-buttons'>
                             <div id='left-link' className={this.state.centerLeftClass}>
                                 {this.state.imgAr[this.state.count === 0 ? 3 : this.state.count - 1]}
