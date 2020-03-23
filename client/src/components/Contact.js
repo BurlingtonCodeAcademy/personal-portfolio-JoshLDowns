@@ -36,30 +36,7 @@ class Contact extends React.Component {
     // sends message to server to be handled by nodemailer and sent via email
     handleSubmit = (event) => {
         event.preventDefault();
-
-        if (this.state.name === '' || this.state.email === '' || this.state.message === '') {
-            console.log(window.location)
-            alert("Please fill out all of the fields!");
-        } else {
-
-            fetch(`https://josh-downs-portfolio.herokuapp.com/send`, {
-                method: "POST",
-                body: JSON.stringify(this.state),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-            }).then(
-                (response) => (response.json())
-            ).then((response) => {
-                if (response.status === 'success') {
-                    alert("Thanks for reaching out!");
-                    this.resetForm()
-                } else if (response.status === 'fail') {
-                    alert("Message failed to send.")
-                }
-            })
-        }
+        alert('This is a work in progress! Email me at josh.lloyd.downs@gmail.com!\n(.... this did not work as intended ....)')
     }
 
     //renders the contact form, and external contact links
