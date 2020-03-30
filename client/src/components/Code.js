@@ -5,6 +5,7 @@ function Code(props) {
     return (
         <div id='main-div'>
             <div id='div-scroll' className={props.animationClass}>
+                <div id='code-projects'>
                 {/*Text Adventure Content*/}
                 <div className='project'>
                     <div className='code-image-wrapper'>
@@ -29,7 +30,7 @@ function Code(props) {
                     </div>
                 </div>
 
-                <div className='project'>
+                <div className='project proj-reverse'>
                     <div className='left-wrapper code-text-wrapper'>
                         <div className='code-text-scroll'>
                             <div className='inner-code-text'>
@@ -75,7 +76,7 @@ function Code(props) {
                     </div>
                 </div>
 
-                <div className='project'>
+                <div className='project proj-reverse'>
                     <div className='left-wrapper code-text-wrapper'>
                         <div className='code-text-scroll'>
                             <div className='inner-code-text'>
@@ -122,7 +123,7 @@ function Code(props) {
                     </div>
                 </div>
 
-                <div className='project'>
+                <div className='project proj-reverse' >
                     <div className='left-wrapper code-text-wrapper'>
                         <div className='code-text-scroll'>
                             <div className='inner-code-text'>
@@ -172,7 +173,7 @@ function Code(props) {
                 </div>
 
                 {/*Original Portfolio Content*/}
-                <div className='project'>
+                <div className='project proj-reverse'>
                     <div className='left-wrapper code-text-wrapper'>
                         <div className='code-text-scroll'>
                             <div className='inner-code-text'>
@@ -194,9 +195,10 @@ function Code(props) {
                         <img className='code-image' src='/images/og-portfolio-1.png' alt='Original Portfolio Screenshot'/>
                     </div>
                 </div>
-
+                
             </div>
             <div id='div-fade'></div>
+            </div>
         </div>
     )
 }

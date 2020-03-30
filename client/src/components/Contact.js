@@ -44,7 +44,7 @@ class Contact extends React.Component {
         return (
             <div id='main-div'>
                 <div id='div-scroll' className={this.props.animationClass}>
-                    <div id='contact'>
+                    <div id='contact-body'>
                         <h3>If you have any questions for me, are interested in working together, or just want to get in touch, fill out the form!</h3>
                         <div id='contact-form'>
                             <form id='message-inputs' onSubmit={this.handleSubmit} method="POST">
