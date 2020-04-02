@@ -38,7 +38,7 @@ function Code(props) {
                                 <ul>
                                     <li className='code-text'>Built in vanilla JavaScript</li>
                                     <li className='code-text'>Uses Inquirer.js to handle inputs from the command line</li>
-                                    <li className='code-text'>Colorful health bars are build with the Chalk library</li>
+                                    <li className='code-text'>Colorful health bars are built with the Chalk library</li>
                                     <li className='code-text'>Text wrapping, and timed text output functions for the command line</li>
                                     <li className='code-text'>Can be installed globally via NPM package</li>
                                 </ul>
