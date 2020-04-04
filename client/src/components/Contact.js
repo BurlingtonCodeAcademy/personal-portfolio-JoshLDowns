@@ -7,10 +7,16 @@ class Contact extends React.Component {
         this.state = {
             name: '',
             email: '',
-            message: ''
+            message: '',
+            status: false
         }
     }
 
+    handleClose = () => {
+        this.setState({
+            status: false
+        })
+    }
     //handles external image links
     handleImageLink = (event) => {
         window.location = event.target.id;
@@ -36,13 +42,28 @@ class Contact extends React.Component {
     // sends message to server to be handled by nodemailer and sent via email
     handleSubmit = (event) => {
         event.preventDefault();
-        alert('This is a work in progress! Email me at josh.lloyd.downs@gmail.com!\n(.... this did not work as intended ....)')
+        if (this.state.name === '' || this.state.email === '' || this.state.message === '') {
+           return alert('Please fill in all of the fields! Thank you for trying to reach out!')
+        }
+        fetch(('/newContact'), {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({name: this.state.name, email: this.state.email, message: this.state.message})
+        }).then(res=>res.json()).then((jsonObj)=>{
+            this.setState({
+                status: jsonObj.status
+            })
+        })
+        this.resetForm();
     }
 
     //renders the contact form, and external contact links
     render() {
         return (
             <div id='main-div'>
+                {this.state.status && <ThankYouModal handleClose={this.handleClose} />}
                 <div id='div-scroll' className={this.props.animationClass}>
                     <div id='contact-body'>
                         <h3>If you have any questions for me, are interested in working together, or just want to get in touch, fill out the form!</h3>
@@ -54,7 +75,7 @@ class Contact extends React.Component {
                                 </label>
                                 <label>
                                     EMAIL:
-                                    <input type='text' id='form-email' value={this.state.email} onChange={this.onEmailChange}></input>
+                                    <input type='email' id='form-email' value={this.state.email} onChange={this.onEmailChange}></input>
                                 </label>
                                 <br />
                                 <label>
@@ -83,6 +104,20 @@ class Contact extends React.Component {
             </div>
         )
     }
+}
+
+function ThankYouModal(props) {
+    return (
+        <div id='thank-you-modal' className='modal-load'>
+            <div id='thank-you-body'>
+                <h1>Thank you for getting in touch!</h1>
+                <h3>I will get back to you soon!</h3>
+            </div>
+            <div id='thank-you-footer'>
+            <button id='image-close' onClick={props.handleClose}>Go Back</button>
+            </div>
+        </div>
+    )
 }
 
 export default Contact

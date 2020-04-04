@@ -608,6 +608,7 @@ label {
     margin: 10px;
     font-family: oswald;
     font-size: 1.15rem;
+    text-align: center;
 }
 
 #form-email {
@@ -617,10 +618,12 @@ label {
     margin: 10px;
     font-family: oswald;
     font-size: 1.15rem;
+    text-align: center;
 }
 
 #form-message {
     font-family: oswald;
+    font-size: 1.15rem;
     display: block;
     width: 50vw;
     min-width: 500px;
@@ -667,6 +670,28 @@ label {
 .contact-image:hover {
     cursor: pointer;
     filter: invert(100%)
+}
+
+#thank-you-modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    margin-top: -37.5vh;
+    margin-left: -40vw;
+    width: 80vw;
+    height: 75vh;
+    border: 5px solid rgb(75, 75, 75);
+    background-color: rgb(255, 191, 179)
+}
+
+#thank-you-body {
+    font-family: oswald;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
