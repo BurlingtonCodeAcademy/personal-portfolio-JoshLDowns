@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-mongoose.connect(`mongodb+srv://joshldowns:${process.env.PASSWORD}@josh-d-blog-archive-wxvci.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(`mongodb+srv://joshldowns:${process.env.PASSWORD}@josh-d-blog-archive-wxvci.mongodb.net/contact?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true})
 //mongodb+srv://joshldowns:<password>@josh-d-blog-archive-wxvci.mongodb.net/test?retryWrites=true&w=majority
 const newDataBase = mongoose.connection;
 
