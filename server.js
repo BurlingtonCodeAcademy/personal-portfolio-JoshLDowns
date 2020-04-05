@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
+const sgMail = require('@sendgrid/mail');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 mongoose.connect(`mongodb+srv://joshldowns:${process.env.PASSWORD}@josh-d-blog-archive-wxvci.mongodb.net/contact?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true})
@@ -39,6 +40,15 @@ async function getMessage(req, res) {
   })
 
   await newMessage.save()
+
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  const msg = {
+    to: 'josh.lloyd.downs@gmail.com',
+    from: email,
+    subject: 'New Contact from joshdowns.dev',
+    text: `${message}\nFrom: ${name}`
+  };
+  sgMail.send(msg);
   res.type('application/json').send(JSON.stringify({status: 'thank-you'}))
 }
 
