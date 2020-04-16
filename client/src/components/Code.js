@@ -6,6 +6,29 @@ function Code(props) {
         <div id='main-div'>
             <div id='div-scroll' className={props.animationClass}>
                 <div id='code-projects'>
+                <div className='proj-reverse project'>
+                    <div className='left-wrapper code-text-wrapper'>
+                        <div className='code-text-scroll'>
+                            <div className='inner-code-text'>
+                                <h3 className='code-title'>CHATTR</h3>
+                                <p className='code-text'>A chat application built in React as a team at Burlington Code Academy</p>
+                                <ul>
+                                    <li className='code-text'>Utilizes the full MERN stack</li>
+                                    <li className='code-text'>Gives users random names to promote a fun chat experience</li>
+                                    <li className='code-text'>Names are saved in cookies to allow users to keep the same name</li>
+                                    <li className='code-text'>Utilizes polling to stay up to date with chat log in database</li>
+                                </ul>
+                                <h4 className='code-title'>LINKS:</h4>
+                                <a target='_blank' rel="noopener noreferrer" href='https://github.com/JoshLDowns/downs-phelps-chat'><h3 className='text-link code-text'>GITHUB</h3></a>
+                                <a target='_blank' rel="noopener noreferrer" href='https://chittr-chattr.herokuapp.com/'><h3 className='text-link code-text'>HEROKU</h3></a>
+                            </div>
+                        </div>
+                        <div className='code-text-fade'></div>
+                    </div>
+                    <div className='code-image-wrapper right-cd'>
+                        <img className='code-image' src='/images/chattr.png' alt='Chattr Screenshot'/>
+                    </div>
+                </div>
                 {/*Text Adventure Content*/}
                 <div className='project'>
                     <div className='code-image-wrapper'>
