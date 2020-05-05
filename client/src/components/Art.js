@@ -19,7 +19,6 @@ class Art extends React.Component {
 
     //closes modal windows
     handleClose = () => {
-        console.log('click')
         this.setState({
             currentModal: false
         })
