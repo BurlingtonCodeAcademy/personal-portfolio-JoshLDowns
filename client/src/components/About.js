@@ -13,19 +13,17 @@ function About(props) {
                     <h2>~ Full Stack Web Developer ~</h2>
                     <p>I'm currently a student / TA at Burlington Code Academy in Burlington, VT</p>
                     <h4>Let's get the technical stuff out of the way first:</h4>
-                    <div id='desktop-tech-specs'>
-                        <p>Languages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . JavaScript, HTML, CSS</p>
-                        <p>Frameworks &amp; Libraries . . . . . . . . . . . . . . . . . . . . . . . . . . . NodeJS, React, Express, Inquirer</p>
-                        <p>Databases . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . MongoDB</p>
-                        <p>Version Control . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Git</p>
-                        <p>Tools &amp; Related Software . . . . . . . . . . . . . . Adobe Creative Suite, Visual Studio Code, OBS</p>
-                    </div>
-                    <div id='mobile-tech-specs'>
-                        <p>Languages: JavaScript, HTML, CSS</p>
-                        <p>Frameworks &amp; Libraries: NodeJS, React, Express, Inquirer</p>
-                        <p>Databases: MongoDB</p>
-                        <p>Version Control: Git</p>
-                        <p>Tools &amp; Related Software: Adobe Creative Suite, Visual Studio Code, OBS</p>
+                    <div id='tech-specs'>
+                        <p className='spec-sub-title'>Languages:</p>
+                        <p className='spec'>JavaScript, Lua, HTML, CSS</p>
+                        <p className='spec-sub-title'>Frameworks &amp; Libraries:</p>
+                        <p className='spec'>NodeJS, React, Express, Inquirer</p>
+                        <p className='spec-sub-title'>Databases:</p>
+                        <p className='spec'>MongoDB, InfluxDB, Firebase</p>
+                        <p className='spec-sub-title'>Version Control:</p>
+                        <p className='spec'>Git</p>
+                        <p className='spec-sub-title'>Tools &amp; Related Software:</p>
+                        <p className='spec'>Adobe Creative Suite, Visual Studio Code, OBS, Pico-8</p>
                     </div>
                     <h2>As for the personal stuff...</h2>
                     <div id='family-wrapper' className='about-image-wrapper'>

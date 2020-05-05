@@ -577,8 +577,18 @@ h3 {
     background-color: rgb(0,0,0,.15);
 }
 
-#mobile-tech-specs {
-    display: none;
+#tech-specs {
+    text-align: center;
+}
+
+.spec {
+    margin-top: 4px;
+}
+
+.spec-sub-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 2px;
 }
 
 /* -------- Contact page formatting -------- */
@@ -853,15 +863,6 @@ label {
         background-color: rgb(255, 191, 179, .6);
     }
 
-    #desktop-tech-specs {
-        display: none;
-    }
-
-    #mobile-tech-specs {
-        display: block;
-        text-align: center;
-    }
-
     .about-image-wrapper {
         width: 75vw;
         height: auto;
@@ -1093,6 +1094,20 @@ label {
         width: 75px;
         height: 75px;
         border: 5px solid rgb(75, 75, 75);
+    }
+
+    /* Modal Window Formatting */
+
+    #modal-image-wrapper, .modal-video-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height: 87.5%;
+        width: 95%;
+        overflow: hidden;
     }
 
 }
