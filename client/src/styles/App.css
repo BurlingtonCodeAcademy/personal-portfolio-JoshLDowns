@@ -33,6 +33,10 @@ h3 {
   margin: 0;
 }
 
+.semi-transparent-bg {
+  background-color: rgb(0, 0, 0, 0.15);
+}
+
 /* -------- Static Header Formatting -------- */
 #header {
   width: 100%;
@@ -575,7 +579,6 @@ h3 {
   align-items: center;
   font-family: oswald;
   padding: 5vw;
-  background-color: rgb(0, 0, 0, 0.15);
 }
 
 #tech-specs {

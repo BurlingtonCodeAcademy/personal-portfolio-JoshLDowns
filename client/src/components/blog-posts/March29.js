@@ -99,11 +99,16 @@ function March29(props) {
           <a
             href="https://github.com/JoshLDowns/downs-phelps-chat"
             target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub
           </a>
           , and check the application itself out on{" "}
-          <a href="https://chittr-chattr.herokuapp.com/" target="_blank">
+          <a
+            href="https://chittr-chattr.herokuapp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Heroku
           </a>
           !

@@ -610,6 +610,7 @@ function VideoModal(props) {
         </div>
         <div className="modal-video-wrapper">
           <iframe
+            title="Ceres Walkthrough"
             src="https://player.vimeo.com/video/414123397"
             width="740"
             height="416"

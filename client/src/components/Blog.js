@@ -110,9 +110,6 @@ function ArchiveLinks(props) {
   return (
     <div id="archive-links" className={props.className}>
       {props.archiveNames.map((name, i) => {
-        {
-          /*nested ternary to handle highlighting of archive links*/
-        }
         return (
           <h1
             id={`archive-${i}`}
