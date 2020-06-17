@@ -856,6 +856,10 @@ label {
 
   /* ------- About Me Formatting ------- */
 
+  .semi-transparent-bg {
+    background-color: rgb(255, 191, 179, 0.6);
+  }
+
   #about {
     display: flex;
     flex-direction: column;
@@ -864,8 +868,8 @@ label {
     text-align: center;
     width: 85vw;
     margin-left: 7.5vw;
+    margin-bottom: 20px;
     padding: 10px;
-    background-color: rgb(255, 191, 179, 0.6);
   }
 
   .about-image-wrapper {
