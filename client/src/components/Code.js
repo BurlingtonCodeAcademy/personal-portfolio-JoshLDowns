@@ -29,6 +29,55 @@ class Code extends React.Component {
         )}
         <div id="div-scroll" className={this.props.animationClass}>
           <div id="code-projects">
+            {/*Peace of Mind*/}
+            <div className="project">
+              <div className="code-image-wrapper">
+                <img
+                  className="code-image"
+                  src="/images/peace-of-mind.png"
+                  alt="Peace of Mind Logo"
+                />
+              </div>
+              <div className="code-text-wrapper">
+                <div className="code-text-scroll">
+                  <div className="inner-code-text">
+                    <h3 className="code-title">Peace of Mind Playschool</h3>
+                    <p className="code-text">
+                      Informational website for Peace of Mind Playschool in
+                      Vermont
+                    </p>
+                    <ul>
+                      <li className="code-text">
+                        Handled all aspects of site design, including logo
+                        design
+                      </li>
+                      <li className="code-text">
+                        Built with a React on the front-end with an Express
+                        server on the back-end
+                      </li>
+                      <li className="code-text">
+                        Utilizes SendGrid to email directly from contact form
+                      </li>
+                      <li className="code-text">
+                        Fully mobile responsive
+                      </li>
+                      <li className="code-text">
+                        Technologies: Express, React, Sendgrid
+                      </li>
+                    </ul>
+                    <h4 className="code-title">LINKS:</h4>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.peaceofmindplay.com"
+                    >
+                      <h3 className="text-link code-text">PEACEOFMINDPLAY.COM</h3>
+                    </a>
+                  </div>
+                </div>
+                <div className="code-text-fade"></div>
+              </div>
+            </div>
             {/*Capstone Content*/}
             <div className="proj-reverse project">
               <div className="left-wrapper code-text-wrapper">
