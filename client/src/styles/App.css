@@ -1005,7 +1005,7 @@ label {
 
   .art-thumb {
     width: 40%;
-    height: 40%;
+    height: auto;
     margin: 0.75%;
     border: 5px solid rgb(75, 75, 75);
     filter: grayscale(75%);
