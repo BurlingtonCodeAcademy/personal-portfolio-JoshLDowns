@@ -33,6 +33,7 @@ class Art extends React.Component {
   }
   //renders all thumbnails
   render() {
+    console.log(this.state.thumbnails)
     return (
       <div>
         {/*conditionally renders modal window based on state*/}
@@ -54,7 +55,7 @@ class Art extends React.Component {
                 <div className="art-thumbnails">
                   {this.state.thumbnails.map((thumb) => (
                     <img
-                      src={thumb.url}
+                      src={thumb.secure_url}
                       alt={thumb.context.caption}
                       id={thumb.context.caption}
                       key={thumb.context.caption}
@@ -108,7 +109,7 @@ function ArtModal(props) {
           </div>
           <div id="modal-image-wrapper">
             <img
-              src={imageInfo.url}
+              src={imageInfo.secure_url}
               className="modal-image"
               alt={`${imageInfo.context.custom.caption}`}
             />
